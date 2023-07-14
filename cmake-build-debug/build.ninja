@@ -49,26 +49,26 @@ cmake_ninja_workdir = D$:/_Projects/_EXE/CVC/cmake-build-debug/
 
 build cmake_object_order_depends_target_cvc_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build CMakeFiles/cvc_test.dir/cvc_tests.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/cvc_tests.cpp || cmake_object_order_depends_target_cvc_test
-  DEP_FILE = CMakeFiles\cvc_test.dir\cvc_tests.cpp.obj.d
+build CMakeFiles/cvc_test.dir/test/cvc_tests.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/test/cvc_tests.cpp || cmake_object_order_depends_target_cvc_test
+  DEP_FILE = CMakeFiles\cvc_test.dir\test\cvc_tests.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest/include -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles\cvc_test.dir
-  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir\test
 
-build CMakeFiles/cvc_test.dir/cvc.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/cvc.cpp || cmake_object_order_depends_target_cvc_test
-  DEP_FILE = CMakeFiles\cvc_test.dir\cvc.cpp.obj.d
+build CMakeFiles/cvc_test.dir/src/cvc.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/src/cvc.cpp || cmake_object_order_depends_target_cvc_test
+  DEP_FILE = CMakeFiles\cvc_test.dir\src\cvc.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest/include -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles\cvc_test.dir
-  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir\src
 
-build CMakeFiles/cvc_test.dir/conventionalStrategy.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/conventionalStrategy.cpp || cmake_object_order_depends_target_cvc_test
-  DEP_FILE = CMakeFiles\cvc_test.dir\conventionalStrategy.cpp.obj.d
+build CMakeFiles/cvc_test.dir/src/conventionalStrategy.cpp.obj: CXX_COMPILER__cvc_test_Debug D$:/_Projects/_EXE/CVC/src/conventionalStrategy.cpp || cmake_object_order_depends_target_cvc_test
+  DEP_FILE = CMakeFiles\cvc_test.dir\src\conventionalStrategy.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest/include -isystem D:/_Projects/_EXE/CVC/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles\cvc_test.dir
-  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\cvc_test.dir\src
 
 
 # =============================================================================
@@ -78,7 +78,7 @@ build CMakeFiles/cvc_test.dir/conventionalStrategy.cpp.obj: CXX_COMPILER__cvc_te
 #############################################
 # Link the executable cvc_test.exe
 
-build cvc_test.exe cvc_test[1]_tests.cmake | ${cmake_ninja_workdir}cvc_test[1]_tests.cmake: CXX_EXECUTABLE_LINKER__cvc_test_Debug CMakeFiles/cvc_test.dir/cvc_tests.cpp.obj CMakeFiles/cvc_test.dir/cvc.cpp.obj CMakeFiles/cvc_test.dir/conventionalStrategy.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build cvc_test.exe cvc_test[1]_tests.cmake | ${cmake_ninja_workdir}cvc_test[1]_tests.cmake: CXX_EXECUTABLE_LINKER__cvc_test_Debug CMakeFiles/cvc_test.dir/test/cvc_tests.cpp.obj CMakeFiles/cvc_test.dir/src/cvc.cpp.obj CMakeFiles/cvc_test.dir/src/conventionalStrategy.cpp.obj | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cvc_test.dir
@@ -98,11 +98,11 @@ build cvc_test.exe cvc_test[1]_tests.cmake | ${cmake_ninja_workdir}cvc_test[1]_t
 
 build cmake_object_order_depends_target_cvc: phony || CMakeFiles/cvc.dir
 
-build CMakeFiles/cvc.dir/cvc.cpp.obj: CXX_COMPILER__cvc_Debug D$:/_Projects/_EXE/CVC/cvc.cpp || cmake_object_order_depends_target_cvc
-  DEP_FILE = CMakeFiles\cvc.dir\cvc.cpp.obj.d
+build CMakeFiles/cvc.dir/src/cvc.cpp.obj: CXX_COMPILER__cvc_Debug D$:/_Projects/_EXE/CVC/src/cvc.cpp || cmake_object_order_depends_target_cvc
+  DEP_FILE = CMakeFiles\cvc.dir\src\cvc.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\cvc.dir
-  OBJECT_FILE_DIR = CMakeFiles\cvc.dir
+  OBJECT_FILE_DIR = CMakeFiles\cvc.dir\src
 
 
 # =============================================================================
@@ -112,7 +112,7 @@ build CMakeFiles/cvc.dir/cvc.cpp.obj: CXX_COMPILER__cvc_Debug D$:/_Projects/_EXE
 #############################################
 # Link the executable cvc.exe
 
-build cvc.exe: CXX_EXECUTABLE_LINKER__cvc_Debug CMakeFiles/cvc.dir/cvc.cpp.obj
+build cvc.exe: CXX_EXECUTABLE_LINKER__cvc_Debug CMakeFiles/cvc.dir/src/cvc.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cvc.dir
