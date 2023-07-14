@@ -2,10 +2,10 @@
 // Created by Jacek on 14.07.2023.
 //
 #include <gtest/gtest.h>
-#include "../src/h/CVC.h"
+#include "../src/h/CommitParser.h"
 #include "../src/h/ConventionalStrategy.h"
 
-CVC* cvc = new CVC(new ConventionalStrategy());
+CommitParser* cvc = new CommitParser(new ConventionalStrategy());
 
 
 TEST(compare_invalid_commit, no_string){
