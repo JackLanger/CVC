@@ -1,0 +1,5 @@
+if(EXISTS "D:/_Projects/_EXE/CVC/cmake-build-debug/cvc_test[1]_tests.cmake")
+  include("D:/_Projects/_EXE/CVC/cmake-build-debug/cvc_test[1]_tests.cmake")
+else()
+  add_test(cvc_test_NOT_BUILT cvc_test_NOT_BUILT)
+endif()
