@@ -13,13 +13,13 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(cvc_test test/cvc_tests.cpp src/commitParser.cpp src/h/CommitParser.h src/conventionalStrategy.cpp src/h/ConventionalStrategy.h src/h/Strategy.h)
+add_executable(cvc_test test/testEntrypoint.cpp test/cvcTests.cpp src/commitParser.cpp src/h/CommitParser.h src/conventionalStrategy.cpp src/h/ConventionalStrategy.h src/h/Strategy.h src/h/VersionProcessor.h src/versionProcessor.cpp test/versionProcessorTest.cpp)
 target_link_libraries(cvc_test PRIVATE gtest_main)
 
-add_test(NAME cvc_test COMMAND test/cvc_tests.cpp)
+add_test(NAME cvc_test COMMAND test/cvcTests.cpp)
 
 enable_testing() #to  discover tests in test explorer
 
 include(GoogleTest)
-add_executable(cvc src/commitParser.cpp src/h/CommitParser.h src/commitParser.cpp src/h/CommitParser.h)
+add_executable(cvc src/commitParser.cpp src/h/CommitParser.h src/commitParser.cpp src/h/CommitParser.h src/h/VersionProcessor.h src/versionProcessor.cpp)
 gtest_discover_tests(cvc_test) # discovers tests by asking the compiled test executable to enumerate its tests
