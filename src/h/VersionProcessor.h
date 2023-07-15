@@ -7,6 +7,9 @@
 
 #include <string>
 
+/**
+ * Processes two versions and returns the new version.
+ */
 class VersionProcessor{
 public:
     /**

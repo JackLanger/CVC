@@ -17,11 +17,6 @@ private:
      */
     Strategy *strategy;
 public:
-    /**
-     * Compute the difference between the two strings and return the new version as a string.
-     * @return version string of new version.
-     */
-    std::string computeNewVersion(const std::string &, const std::string &);
 
     /**
      * Parse an input string and return the version change for change.
