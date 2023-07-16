@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22.1)
+cmake_minimum_required(VERSION 3.20)>>>>>>> main
 project(CVC)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -21,5 +21,10 @@ add_test(NAME cvc_test COMMAND test/commitParserTest.cpp)
 enable_testing() #to  discover tests in test explorer
 
 include(GoogleTest)
+<<<<<<< HEAD
 add_executable(cvc src/commitParser.cpp src/h/CommitParser.h src/commitParser.cpp src/h/CommitParser.h src/h/VersionProcessor.h src/versionProcessor.cpp src/CVC.cpp src/h/CVC.h src/entrypoint.cpp)
 gtest_discover_tests(cvc_test) # discovers tests by asking the compiled test executable to enumerate its tests
+=======
+add_executable(cvc src/entry.cpp src/versionProcessor.cpp src/commitParser.cpp src/commitParser.cpp src/conventionalStrategy.cpp src/h/CommitParser.h src/h/VersionProcessor.h src/h/ConventionalStrategy.h)
+gtest_discover_tests(cvc_test) # discovers tests by asking the compiled test executable to enumerate its tests
+>>>>>>> main

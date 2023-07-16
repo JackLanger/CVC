@@ -9,13 +9,16 @@
 
 class ConventionalStrategy : public Strategy {
 public:
-    std::string execute(const std::string& input);
+    std::string execute(const std::string& input) override;
 
     static bool isFeature(const std::string &input);
 
     static bool isFix(const std::string &input);
 
     static bool isBreakingChange(const std::string &input);
+
+    ConventionalStrategy();
+    ~ConventionalStrategy() override;
 };
 
 

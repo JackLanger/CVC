@@ -10,9 +10,9 @@
 
 class Strategy {
 public:
-    virtual std::string execute(const std::string &input){
-        return input;
-    }
+    virtual std::string execute(const std::string &input) {return "";};
+    Strategy() = default;
+    virtual ~Strategy();
 };
 
 
