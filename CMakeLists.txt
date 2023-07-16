@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.22.1)
 project(CVC)
 set(CMAKE_CXX_STANDARD 17)
 
@@ -13,13 +13,13 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(cvc_test test/testEntrypoint.cpp test/cvcTests.cpp src/commitParser.cpp src/h/CommitParser.h src/conventionalStrategy.cpp src/h/ConventionalStrategy.h src/h/Strategy.h src/h/VersionProcessor.h src/versionProcessor.cpp test/versionProcessorTest.cpp)
+add_executable(cvc_test test/testEntrypoint.cpp test/commitParserTest.cpp src/commitParser.cpp src/h/CommitParser.h src/conventionalStrategy.cpp src/h/ConventionalStrategy.h src/h/Strategy.h src/h/VersionProcessor.h src/versionProcessor.cpp test/versionProcessorTest.cpp src/CVC.cpp src/h/CVC.h test/cvcTest.cpp)
 target_link_libraries(cvc_test PRIVATE gtest_main)
 
-add_test(NAME cvc_test COMMAND test/cvcTests.cpp)
+add_test(NAME cvc_test COMMAND test/commitParserTest.cpp)
 
 enable_testing() #to  discover tests in test explorer
 
 include(GoogleTest)
-add_executable(cvc src/commitParser.cpp src/h/CommitParser.h src/commitParser.cpp src/h/CommitParser.h src/h/VersionProcessor.h src/versionProcessor.cpp)
+add_executable(cvc src/commitParser.cpp src/h/CommitParser.h src/commitParser.cpp src/h/CommitParser.h src/h/VersionProcessor.h src/versionProcessor.cpp src/CVC.cpp src/h/CVC.h src/entrypoint.cpp)
 gtest_discover_tests(cvc_test) # discovers tests by asking the compiled test executable to enumerate its tests

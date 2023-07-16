@@ -48,12 +48,11 @@ std::string VersionProcessor::process(const std::string &current_version,
     std::vector<std::string> current, diff;
     current = splitString(current_version, '.');
     diff = splitString(version_diff, '.');
-    int i, major, minor, fix;
-    i = major = minor = fix = 0;
+    int  major, minor, fix;
+    major = minor = fix = 0;
 
-    do {
+    for (int i = 0; i < 3; ++i) {
         bool isNonZero = diff[i] == "1";
-
         if (i == 0) {
             setValue(diff[i], current[i], isNonZero, &major);
             if(isNonZero)break;
@@ -65,8 +64,7 @@ std::string VersionProcessor::process(const std::string &current_version,
         else {
             setValue(diff[i], current[i], isNonZero, &fix);
         }
-
-    } while (diff[i++] != "1" || i < 2);
+    }
 
     return combine(major, minor, fix, '.');
 }
