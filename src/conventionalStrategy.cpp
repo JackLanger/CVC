@@ -5,6 +5,11 @@
 #include <regex>
 #include "h/ConventionalStrategy.h"
 
+
+Strategy::~Strategy() = default;
+ConventionalStrategy::ConventionalStrategy() = default;
+ConventionalStrategy::~ConventionalStrategy() = default;
+
 const std::string major_change_regex = R"(.+!.*:|^.+\(breaking\schange\):.+$)";
 const std::string feature_regex = R"(^feat.*:)";
 const std::string fix_regex = R"(^fix.*:)";
@@ -22,7 +27,7 @@ std::string ConventionalStrategy::execute(const std::string& input) {
 }
 
 
-bool findRegex(const std::string &input, const std::string &regex_str){
+bool findRegex(const std::string &input, const std::string &regex_str) {
     std::regex regex(regex_str);
     auto marker_begin = std::sregex_iterator (input.begin(), input.end(), regex);
     auto marker_end = std::sregex_iterator();
